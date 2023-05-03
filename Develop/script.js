@@ -40,7 +40,6 @@ function writePassword() {
             window.alert("Invalid entry! Please enter a NUMBER between 8 and 128.");
             chooseLength();
         }
-
     }
 
     lengthVal();
