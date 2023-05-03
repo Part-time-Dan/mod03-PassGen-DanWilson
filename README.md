@@ -40,4 +40,4 @@ N/A
 
 ## Deploy Git Page Screenshot
 
-![Image of password generator while in use] (./Assets/mod03-screenshot-DanWilson.PNG)
+![Image of password generator while in use] (Assets\mod03-screenshot-DanWilson.PNG)
