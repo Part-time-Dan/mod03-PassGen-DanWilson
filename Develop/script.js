@@ -14,8 +14,6 @@ var generateBtn = document.querySelector("#generate");
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
 
-//criteria code
-
 var genArray = [];
 
 const lowerArray = Array.from('abcdefghijklmnopqrstuvwxyz');
@@ -29,7 +27,7 @@ function writePassword() {
     var userNum = '';
 
     function chooseLength() { 
-        userNum = window.prompt('Choose 8 to 128');
+        userNum = window.prompt("Please enter the amount of CHARACTERS you would like in your password (Minimum of 8 up to 128 characters allowed):");
         console.log(userNum);
     }
 
@@ -39,7 +37,7 @@ function writePassword() {
     function lengthVal() {
 
         while (isNaN(userNum) || userNum < 8 || userNum > 128) {
-            window.alert('Invalid entry');
+            window.alert("Invalid entry! Please enter a NUMBER between 8 and 128.");
             chooseLength();
         }
 
@@ -52,13 +50,13 @@ function writePassword() {
         userInput = '';
 
         function locasePrompt () {
-            userInput = window.prompt('Lowercase? Y or N:');
+            userInput = window.prompt("Do you want LOWERCASE LETTERS in your password? 'Y' (yes) or 'N' (no):");
             userInput = userInput.toUpperCase();
         }
 
         function lowChar() {
             while (userInput != 'Y' && userInput != 'N') {
-            window.alert('Invalid');
+            window.alert("Invalid entry! Only 'Y' or 'N' responses please.");
             locasePrompt();
             }
             if (userInput === 'Y') {
@@ -69,13 +67,13 @@ function writePassword() {
         }
 
         function upcasePrompt () {
-            userInput = window.prompt('Uppercase? Y or N:');
+            userInput = window.prompt("Do you want UPPERCASE LETTERS in your password? 'Y' or 'N':");
             userInput = userInput.toUpperCase();
         }
 
         function upChar() {
             while (userInput != 'Y' && userInput != 'N') {
-            window.alert('Invalid');
+            window.alert("Invalid entry! Only 'Y' or 'N' responses please.");
             upcasePrompt();
             }
             if (userInput === 'Y') {
@@ -86,14 +84,13 @@ function writePassword() {
         }
 
         function numPrompt () {
-            userInput = window.prompt('Numbers? Y or N:');
+            userInput = window.prompt("Do you want to include NUMBERS in your password? 'Y' or 'N':");
             userInput = userInput.toUpperCase();
-
         }
 
         function numChar() {
             while (userInput != 'Y' && userInput != 'N') {
-            window.alert('Invalid');
+            window.alert("Invalid entry! Only 'Y' or 'N' responses please.");
             numPrompt();
             }
             if (userInput === 'Y') {
@@ -104,14 +101,13 @@ function writePassword() {
         }
 
         function specPrompt () {
-            userInput = window.prompt('Special characters? Y or N:');
+            userInput = window.prompt("Add some SPECIAL characters (#, @, !, &, *, %) to strengthen your password. 'Y' or 'N':");
             userInput = userInput.toUpperCase();
-
         }
 
         function specChar() {
             while (userInput != 'Y' && userInput != 'N') {
-            window.alert('Invalid');
+            window.alert("Invalid entry! Only 'Y' or 'N' responses please.");
             specPrompt();
             }
             if (userInput === 'Y') {
@@ -123,23 +119,25 @@ function writePassword() {
 
         locasePrompt();
         lowChar();
+        console.log(userInput)
         upcasePrompt();
         upChar();
+        console.log(userInput)
         numPrompt();
         numChar();
+        console.log(userInput)
         specPrompt();
         specChar();
+        console.log(userInput)
 
         //validate user character choice
         while (genArray.length === 0) {
-            window.alert('Must choose at least 1 character set')
+            window.alert("You must select at least 1 set of characters to generate a password.")
             charSelector();
         }
-
     }
 
     charSelector();
-    console.log(userInput);
     console.log(genArray);
 
     // array manipulation to get string
@@ -160,6 +158,5 @@ function writePassword() {
     console.log(password);
 
     var passwordText = document.querySelector("#password");
-
     passwordText.value = password.join("");
 }
