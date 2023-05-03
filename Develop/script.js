@@ -1,18 +1,18 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
-// Write password to the #password input
-function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
+//Commenting out starter code and set it where needed within 'writePassword' function full code
+    // Write password to the #password input
+    // function writePassword() {
+    //   var password = generatePassword();
+    //   var passwordText = document.querySelector("#password");
 
-  passwordText.value = password;
+    //   passwordText.value = password;
 
-}
+    // }
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
-
 
 //criteria code
 
@@ -23,7 +23,7 @@ const upperArray = Array.from('ABCDEFGHIJKLMNOPQRSTUVWXYZ');
 const numArray = Array.from('0123456789');
 const specialArray = Array.from('~!@#$%^&*()_-+<>.?/');
 
-function passwordPrompts() {
+function writePassword() { 
 
     //declare variable to store value of password length for generator
     var userNum = '';
@@ -158,6 +158,8 @@ function passwordPrompts() {
     } 
 
     console.log(password);
-}
 
-passwordPrompts();
+    var passwordText = document.querySelector("#password");
+
+    passwordText.value = password.join("");
+}
