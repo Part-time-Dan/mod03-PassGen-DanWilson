@@ -10,7 +10,7 @@ Objectives:
 - User selections should be validated
 - The passowrd is output (either in alert or on the page) with the matching selected criteria
 
-Addition Note: *While a password generator can be made more user-friendly using HTML elements to create an interactive UI in the page, the criteria and course instruction heavily suggested to try and only make the password generator using Javascript and prompts. All the HTML linking elements were provided in the JS starter code, and no HTML or CSS was modified for this assignment*
+Addition Note: *While a password generator can be made more user-friendly using HTML elements to create an interactive UI in the page, the criteria and course instruction heavily suggested to try and only make the password generator using Javascript and prompts. All the HTML linking elements were provided in the JS starter code, and no HTML or CSS was modified for this assignment other than directory pathing fixes.*
 
 ## Installation
 
@@ -27,7 +27,7 @@ Console.log outputs are included so users can verify how their inputs are regist
 
 ### Note 
 
-Issue: Currently the first conditional check for character limit isn't optimized, and trying to 'Cancel' or refresh during this prompt results in looping, but the loop will end if a valid response of 8 through 128 is entered.
+Issue: Currently the first conditional check for character limit isn't optimized, and trying to 'Cancel' or refresh during this prompt results in looping, the loop will continue if a valid response of 8 through 128 is entered. If a refresh is performed during the looping, when the user completes the process, no password will be generated so they must click the button to restart and follow the prompts again.
 
 
 ## Contributions
